@@ -2,7 +2,7 @@
 ;  https://github.com/jarvist/CoarseGrainPCBM/blob/master/2013-01_CG_fit_to_atomistic_workings/tris_isomer_mix/TRIS-PCBM-ISOMERS.top
 [ defaults ]
 ; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
-  1             2               yes              1.0     1.0
+  1             2               no              1.0     1.0
 
 [ atomtypes ]
 ;type    mass    charge       ptype          sigma      epsilon
@@ -26,6 +26,12 @@
 ;Or something like that, JMF 2-12-08
 
 
+; via: http://www.gromacs.org/@api/deki/files/94/=gromacs_nb.pdf 
+[ nonbond_params ] ; Make the bricks Sticky!
+; i j func cs6 cs12 ; THESE ARE 1-4 INTERACTIONS
+;PBM PBM 1 0.05 50.0
+
+
 [ moleculetype ]
 ; name  nrexcl
 TTT4	  1
@@ -36,7 +42,6 @@ TTT4	  1
     2	 PBM	1	MONO-PCBM	P	1	0.0
     3	 PBM	1	MONO-PCBM	P	1	0.0
     4	 PBM	1	MONO-PCBM	P	1	0.0
-
 
 [ bonds ]
 ; BOND LENGTH HERE
@@ -66,5 +71,5 @@ PCBM_coarse_grained
 [ molecules ]
 ; Compound        #mols
 
-TTT4 1000
+TTT4 990
 

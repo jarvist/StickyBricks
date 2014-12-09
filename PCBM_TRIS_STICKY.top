@@ -29,7 +29,7 @@
 ; via: http://www.gromacs.org/@api/deki/files/94/=gromacs_nb.pdf 
 [ nonbond_params ] ; Make the bricks Sticky!
 ; i j func cs6 cs12 ; THESE ARE 1-4 INTERACTIONS
-;PBM PBM 1 0.05 50.0
+PBM PBM 1 0.001 50.0
 
 
 [ moleculetype ]
